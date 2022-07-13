@@ -104,5 +104,34 @@ func main() {
 
 ```
 
+- counter view:
+```golang
+package main
+
+import "github.com/krishpranav/flash"
+
+type Counter struct {
+	Number int
+}
+
+func (c *Counter) Render() (string, error) {
+	return `
+		Counter: {{ .Number }}
+		<button @click="AddOne">+</button>
+	`, nil
+}
+
+func (c *Counter) AddOne() {
+	c.Number++
+}
+
+func main() {
+	panic(flash.NewServer().Start(func(_ *flash.Connection) flash.Component {
+		return &Counter{}
+	}))
+}
+
+```
+
 ## License:
 - flash is licensed under [GPL-2.0 License](https://github.com/krishpranav/flash/blob/main/LICENSE)
