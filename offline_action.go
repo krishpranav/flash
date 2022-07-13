@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2022, Krisna Pranav
+ *
+ * SPDX-License-Identifier: GPL-2.0 License
+ */
+
 package flash
 
 import "fmt"
